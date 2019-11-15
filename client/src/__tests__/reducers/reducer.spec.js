@@ -1,41 +1,41 @@
-import { INITIAL_STATE, filmReducer } from "../../reducers/filmReducer";
+import { INITIAL_STATE, recipeReducer } from "../../reducers/recipeReducer";
 
-describe("filmReducer", () => {
+describe("recipeReducer", () => {
   it("SHOW_UPLOAD_MODAL", () => {
     const action = {
       type: "SHOW_UPLOAD_MODAL"
     };
 
-    expect(filmReducer(INITIAL_STATE, action)).toEqual({
+    expect(recipeReducer(INITIAL_STATE, action)).toEqual({
       ...INITIAL_STATE,
       isShowingUploadModal: true
     });
   });
 
-  it("SEARCH_FILM_REQUEST_FAILED", () => {
+  it("SEARCH_RECIPE_REQUEST_FAILED", () => {
     const action = {
-      type: "SEARCH_FILM_REQUEST_FAILED",
+      type: "SEARCH_RECIPE_REQUEST_FAILED",
       error: true,
       isFetching: true
     };
 
-    expect(filmReducer(INITIAL_STATE, action)).toEqual({
+    expect(recipeReducer(INITIAL_STATE, action)).toEqual({
       ...INITIAL_STATE,
       error: action.error,
       isFetching: true
     });
   });
 
-  it("FETCH_FILMS_SUCCESS", () => {
+  it("FETCH_RECIPES_SUCCESS", () => {
     const action = {
-      type: "FETCH_FILMS_SUCCESS",
-      films: [{ key: "obj" }],
+      type: "FETCH_RECIPES_SUCCESS",
+      recipes: [{ key: "obj" }],
       message: undefined
     };
 
-    expect(filmReducer(INITIAL_STATE, action)).toEqual({
+    expect(recipeReducer(INITIAL_STATE, action)).toEqual({
       ...INITIAL_STATE,
-      films: action.films,
+      recipes: action.recipes,
       successMsg: action.message
     });
   });

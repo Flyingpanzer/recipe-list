@@ -1,30 +1,30 @@
 import {
-  addNewFilmRequestFailed,
-  displayFilmById,
-  searchFilmRequestSuccess
-} from "../../actions/filmActions";
+  addNewRecipeRequestFailed,
+  displayRecipeById,
+  searchRecipeRequestSuccess
+} from "../../actions/recipeActions";
 
-it("addNewFilmRequestFailed(): should create an action to set error", () => {
+it("addNewRecipeRequestFailed(): should create an action to set error", () => {
   const expectedAction = {
-    type: "ADD_NEW_FILM_REQUEST_FAILED",
+    type: "ADD_NEW_RECIPE_REQUEST_FAILED",
     error: undefined
   };
-  expect(addNewFilmRequestFailed()).toEqual(expectedAction);
+  expect(addNewRecipeRequestFailed()).toEqual(expectedAction);
 });
 
-it("displayFilmById(): should create an action to set film id", () => {
+it("displayRecipeById(): should create an action to set recipe id", () => {
   const expectedAction = {
-    type: "DISPLAY_FILM_BY_ID",
-    filmId: undefined
+    type: "DISPLAY_RECIPE_BY_ID",
+    recipeId: undefined
   };
-  expect(displayFilmById()).toEqual(expectedAction);
+  expect(displayRecipeById()).toEqual(expectedAction);
 });
 
-it("searchFilmRequestSuccess(): should create an action to set film and success message", () => {
+it("searchRecipeRequestSuccess(): should create an action to set recipe and success message", () => {
   const expectedAction = {
-    type: "SEARCH_FILM_REQUEST_SUCCESS",
-    film: undefined,
+    type: "SEARCH_RECIPE_REQUEST_SUCCESS",
+    recipe: undefined,
     message: undefined
   };
-  expect(searchFilmRequestSuccess()).toEqual(expectedAction);
+  expect(searchRecipeRequestSuccess()).toEqual(expectedAction);
 });

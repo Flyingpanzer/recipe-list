@@ -3,15 +3,15 @@ import { shallow } from "enzyme";
 
 import SearchDetails from "../../components/SearchDetails";
 
-const searchedFilms = {
-  filmTitle: "Leon",
-  filmYear: "1994",
-  filmFormat: "VHS",
-  filmStars: "Luc Besson"
+const searchedRecipes = {
+  recipeTitle: "Leon",
+  recipeYear: "1994",
+  recipeFormat: "VHS",
+  recipeStars: "Luc Besson"
 };
 describe("SearchDetails component", () => {
   test("receive props and renders", () => {
-    const wrapper = shallow(<SearchDetails searchedFilms={searchedFilms} />);
+    const wrapper = shallow(<SearchDetails searchedRecipes={searchedRecipes} />);
 
     expect(wrapper).toMatchSnapshot();
   });

@@ -1,7 +1,7 @@
 import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
 
-import { fetchFilms } from "../../actions/filmActions";
+import { fetchRecipes } from "../../actions/recipeActions";
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -25,20 +25,20 @@ it("calls request action when fetch is called", () => {
       Promise.resolve(mockResponse(200, null, "response"))
     );
 
-  return store.dispatch(fetchFilms()).then(() => {
+  return store.dispatch(fetchRecipes()).then(() => {
     const expectedActions = store.getActions();
-    expect(expectedActions).toContainEqual({ type: "FETCH_FILMS_REQUEST" });
+    expect(expectedActions).toContainEqual({ type: "FETCH_RECIPES_REQUEST" });
   });
 });
 
 it("action returns proper response", () => {
   const expectedData = {
-    films: [1, 2, 3],
+    recipes: [1, 2, 3],
     message: "success",
     success: true
   };
   test("the data is expectedData", () => {
-    return fetchFilms().then(data => {
+    return fetchRecipes().then(data => {
       expect(data).toBe(expectedData);
     });
   });

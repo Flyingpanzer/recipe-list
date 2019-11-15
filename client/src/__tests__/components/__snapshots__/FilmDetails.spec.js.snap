@@ -18,11 +18,11 @@ ReactWrapper {
     "key": undefined,
     "nodeType": "function",
     "props": Object {
-      "filmDetails": Object {
-        "filmFormat": "VHS",
-        "filmStars": "Alexander Kaidanovsky",
-        "filmTitle": "Stalker",
-        "filmYear": "1979	",
+      "recipeDetails": Object {
+        "recipeFormat": "VHS",
+        "recipeStars": "Alexander Kaidanovsky",
+        "recipeTitle": "Stalker",
+        "recipeYear": "1979	",
       },
     },
     "ref": null,
@@ -64,11 +64,11 @@ ReactWrapper {
       "key": undefined,
       "nodeType": "function",
       "props": Object {
-        "filmDetails": Object {
-          "filmFormat": "VHS",
-          "filmStars": "Alexander Kaidanovsky",
-          "filmTitle": "Stalker",
-          "filmYear": "1979	",
+        "recipeDetails": Object {
+          "recipeFormat": "VHS",
+          "recipeStars": "Alexander Kaidanovsky",
+          "recipeTitle": "Stalker",
+          "recipeYear": "1979	",
         },
       },
       "ref": null,
@@ -130,13 +130,13 @@ ReactWrapper {
     },
   },
   Symbol(enzyme.__linkedRoots__): Array [],
-  Symbol(enzyme.__unrendered__): <FilmDetails
-    filmDetails={
+  Symbol(enzyme.__unrendered__): <RecipeDetails
+    recipeDetails={
         Object {
-            "filmFormat": "VHS",
-            "filmStars": "Alexander Kaidanovsky",
-            "filmTitle": "Stalker",
-            "filmYear": "1979	",
+            "recipeFormat": "VHS",
+            "recipeStars": "Alexander Kaidanovsky",
+            "recipeTitle": "Stalker",
+            "recipeYear": "1979	",
           }
     }
 />,

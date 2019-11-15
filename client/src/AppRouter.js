@@ -1,21 +1,17 @@
-import React from "react";
-import { Switch, Route } from "react-router-dom";
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 
-import NavBar from "./components/NavBar";
-import Films from "./containers/Films";
-import AddFilm from "./containers/AddFilm";
-import AddFile from "./containers/AddFile";
-import SearchFilm from "./containers/SearchFilm";
+import NavBar from './components/NavBar';
+import Recipes from './containers/Recipes';
+import AddRecipe from './containers/AddRecipe';
 
 const AppRouter = () => {
   return (
     <div>
       <NavBar />
       <Switch>
-        <Route path="/addFilm" component={AddFilm} />
-        <Route path="/addFile" component={AddFile} />
-        <Route path="/searchFilm" component={SearchFilm} />
-        <Route path="/" component={Films} />
+        <Route path="/addRecipe" component={AddRecipe} />
+        <Route path="/" component={Recipes} />
       </Switch>
     </div>
   );

@@ -4,12 +4,12 @@ exports[`SearchDetails component receive props and renders 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <SearchDetails
-    searchedFilms={
+    searchedRecipes={
         Object {
-            "filmFormat": "VHS",
-            "filmStars": "Luc Besson",
-            "filmTitle": "Leon",
-            "filmYear": "1994",
+            "recipeFormat": "VHS",
+            "recipeStars": "Luc Besson",
+            "recipeTitle": "Leon",
+            "recipeYear": "1994",
           }
     }
 />,
@@ -28,7 +28,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": false,
-      "className": "filmDetail",
+      "className": "recipeDetail",
     },
     "ref": null,
     "rendered": false,
@@ -41,7 +41,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": false,
-        "className": "filmDetail",
+        "className": "recipeDetail",
       },
       "ref": null,
       "rendered": false,

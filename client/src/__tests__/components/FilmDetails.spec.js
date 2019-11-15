@@ -1,17 +1,17 @@
-import React from "react";
-import { mount } from "enzyme";
+import React from 'react';
+import { mount } from 'enzyme';
 
-import FilmDetails from "../../components/FilmDetails";
+import RecipeDetails from '../../components/RecipeDetails';
 
-const filmDetails = {
-  filmTitle: "Stalker",
-  filmYear: "1979	",
-  filmFormat: "VHS",
-  filmStars: "Alexander Kaidanovsky"
+const recipeDetails = {
+  recipeTitle: 'Stalker',
+  recipeYear: '1979	',
+  recipeFormat: 'VHS',
+  recipeStars: 'Alexander Kaidanovsky',
 };
-describe("SearchDetails component", () => {
-  test("receive props and renders", () => {
-    const wrapper = mount(<FilmDetails filmDetails={filmDetails} />);
+describe('SearchDetails component', () => {
+  test('receive props and renders', () => {
+    const wrapper = mount(<RecipeDetails recipeDetails={recipeDetails} />);
 
     expect(wrapper).toMatchSnapshot();
   });

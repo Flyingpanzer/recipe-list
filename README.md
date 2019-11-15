@@ -1,15 +1,15 @@
-# Test task "Film list application"
+# Test task "Recipe list application"
 
-SPA with REST API for representing film list
+SPA with REST API for representing recipe list
 
 ## Functionality:
 
-- Add film to list
-- Delete film from list
-- Display film details
-- Search film by title and by actor name
-- Sort film list by film title
-- Import films from text document
+- Add recipe to list
+- Delete recipe from list
+- Display recipe details
+- Search recipe by title and by actor name
+- Sort recipe list by recipe title
+- Import recipes from text document
 
 ## Technologies
 

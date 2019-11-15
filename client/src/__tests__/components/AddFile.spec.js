@@ -23,9 +23,9 @@ describe("AddFile component", () => {
     ).toEqual({
       bsClass: "form-control",
       componentClass: "input",
-      name: "filmTitle",
+      name: "recipeTitle",
       onChange: expect.any(Function),
-      placeholder: "Enter film title",
+      placeholder: "Enter recipe title",
       type: "file"
     });
   });

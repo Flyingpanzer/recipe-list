@@ -2,18 +2,18 @@ import React from "react";
 import { mount, shallow } from "enzyme";
 import expectExport from "expect";
 
-import Films from "../../components/Films";
+import Recipes from "../../components/Recipes";
 import ToolBar from "../../containers/ToolBar";
-import FilmDetails from "../../containers/FilmDetails";
+import RecipeDetails from "../../containers/RecipeDetails";
 
-describe("FilmForm component", () => {
+describe("RecipeForm component", () => {
   test("should render ToolBar component", () => {
-    const wrapper = shallow(<Films />);
+    const wrapper = shallow(<Recipes />);
     expectExport(wrapper.find(ToolBar).length).toEqual(1);
   });
 
-  test("should render FilmDetails component", () => {
-    const wrapper = shallow(<Films />);
-    expectExport(wrapper.find(FilmDetails).length).toEqual(1);
+  test("should render RecipeDetails component", () => {
+    const wrapper = shallow(<Recipes />);
+    expectExport(wrapper.find(RecipeDetails).length).toEqual(1);
   });
 });

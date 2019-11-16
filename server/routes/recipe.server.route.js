@@ -5,6 +5,7 @@ import {
   addRecipe,
   deleteRecipe,
   updateRecipe,
+  showPrevDesc,
 } from '../controllers/recipe.server.controller';
 
 const router = express.Router();
@@ -14,6 +15,9 @@ router
   .get(getRecipes)
   .put(updateRecipe)
   .post(addRecipe);
-router.route('/:id').delete(deleteRecipe);
+router
+  .route('/:id')
+  .delete(deleteRecipe)
+  .post(showPrevDesc);
 
 export default router;

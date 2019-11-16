@@ -7,6 +7,8 @@ import {
   ADD_NEW_RECIPE_SUCCESS,
   ADD_NEW_RECIPE_FAILED,
   DISPLAY_RECIPE_BY_ID,
+  SHOW_PREV_DESC_SUCCESS,
+  SHOW_PREV_DESC_FAILED,
   SHOW_EDIT_MODAL,
   HIDE_EDIT_MODAL,
   EDIT_RECIPE_REQUEST,
@@ -27,6 +29,7 @@ export const INITIAL_STATE = {
   success: null,
   successMsg: null,
   successAddMsg: null,
+  prevDesc: [],
   isShowingDeleteModal: false,
   isShowingEditModal: false,
   recipeToDelete: null,
@@ -40,13 +43,13 @@ export const recipeReducer = (currentState = INITIAL_STATE, action) => {
         ...currentState,
         recipes: [],
         isFetching: true,
+        prevDesc: [],
       };
 
     case FETCH_RECIPES_SUCCESS:
       return {
         ...currentState,
         recipes: action.recipes,
-        searchedRecipes: [],
         recipe: null,
         isFetching: false,
         successMsg: action.message,
@@ -95,6 +98,7 @@ export const recipeReducer = (currentState = INITIAL_STATE, action) => {
         ...currentState,
         isFetching: true,
       };
+
     case EDIT_RECIPE_SUCCESS:
       const editedRecipe = currentState.recipes.map(recipe => {
         if (recipe._id !== action.recipeToEdit._id) {
@@ -123,6 +127,7 @@ export const recipeReducer = (currentState = INITIAL_STATE, action) => {
         recipeToEdit: action.recipeToEdit,
         successMsg: null,
         recipe: null,
+        prevDesc: [],
       };
 
     case HIDE_EDIT_MODAL:
@@ -139,6 +144,21 @@ export const recipeReducer = (currentState = INITIAL_STATE, action) => {
       return {
         ...currentState,
         recipe: recipeDetails,
+        prevDesc: [],
+      };
+
+    case SHOW_PREV_DESC_SUCCESS:
+      return {
+        ...currentState,
+        prevDesc: action.prevDesc,
+        successMsg: action.message,
+      };
+
+    case SHOW_PREV_DESC_FAILED:
+      return {
+        ...currentState,
+        prevDesc: [],
+        error: action.error,
       };
 
     case DELETE_RECIPE_SUCCESS:
@@ -150,6 +170,7 @@ export const recipeReducer = (currentState = INITIAL_STATE, action) => {
         recipes: filteredRecipes,
         successMsg: action.message,
         recipeToDelete: action.recipeToDelete,
+        isFetching: false,
       };
 
     case DELETE_RECIPE_FAILED:
@@ -164,7 +185,9 @@ export const recipeReducer = (currentState = INITIAL_STATE, action) => {
         ...currentState,
         successMsg: null,
         isShowingDeleteModal: true,
+        recipe: null,
         recipeToDelete: action.recipe,
+        prevDesc: [],
       };
 
     case HIDE_DELETE_MODAL:

@@ -7,6 +7,8 @@ import {
   ADD_NEW_RECIPE_REQUEST,
   ADD_NEW_RECIPE_SUCCESS,
   ADD_NEW_RECIPE_FAILED,
+  SHOW_PREV_DESC_SUCCESS,
+  SHOW_PREV_DESC_FAILED,
   SHOW_EDIT_MODAL,
   HIDE_EDIT_MODAL,
   EDIT_RECIPE_REQUEST,
@@ -15,7 +17,6 @@ import {
   DISPLAY_RECIPE_BY_ID,
   SHOW_DELETE_MODAL,
   HIDE_DELETE_MODAL,
-  DELETE_RECIPE_REQUEST,
   DELETE_RECIPE_SUCCESS,
   DELETE_RECIPE_FAILED,
 } from './actionType';
@@ -122,6 +123,39 @@ export const displayRecipeById = recipeId => {
   };
 };
 
+export const showPreviousDesc = recipe => {
+  return dispatch => {
+    return fetch(apiUrl + recipe._id, {
+      method: 'post',
+    }).then(response => {
+      if (response.ok) {
+        response.json().then(data => {
+          dispatch(showPrevDescSuccess(data.prevDesc, data.message));
+        });
+      } else {
+        response.json().then(error => {
+          dispatch(showPrevDescFailed(error));
+        });
+      }
+    });
+  };
+};
+
+export const showPrevDescSuccess = (prevDesc, message) => {
+  return {
+    type: SHOW_PREV_DESC_SUCCESS,
+    prevDesc,
+    message,
+  };
+};
+
+export const showPrevDescFailed = error => {
+  return {
+    type: SHOW_PREV_DESC_FAILED,
+    error,
+  };
+};
+
 export const showEditModal = recipeToEdit => {
   return {
     type: SHOW_EDIT_MODAL,
@@ -192,7 +226,6 @@ export const hideDeleteModal = () => {
 
 export const deleteRecipe = recipeToDelete => {
   return dispatch => {
-    dispatch(deleteRecipeRequest(recipeToDelete));
     return fetch(apiUrl + recipeToDelete._id, {
       method: 'delete',
     }).then(response => {
@@ -206,13 +239,6 @@ export const deleteRecipe = recipeToDelete => {
         });
       }
     });
-  };
-};
-
-export const deleteRecipeRequest = recipeToDelete => {
-  return {
-    type: DELETE_RECIPE_REQUEST,
-    recipeToDelete,
   };
 };
 

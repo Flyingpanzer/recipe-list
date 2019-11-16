@@ -1,51 +1,50 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SearchDetails component receive props and renders 1`] = `
-ShallowWrapper {
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <SearchDetails
-    searchedRecipes={
-        Object {
-            "recipeFormat": "VHS",
-            "recipeStars": "Luc Besson",
-            "recipeTitle": "Leon",
-            "recipeYear": "1994",
-          }
-    }
-/>,
+ReactWrapper {
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
-    "checkPropTypes": [Function],
     "getNode": [Function],
+    "getWrappingComponentRenderer": [Function],
     "render": [Function],
     "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
+    "wrapInvoke": [Function],
   },
+  Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "function",
     "props": Object {
-      "children": false,
-      "className": "recipeDetail",
+      "recipeDetails": Object {
+        "recipeFormat": "VHS",
+        "recipeStars": "Alexander Kaidanovsky",
+        "recipeTitle": "Stalker",
+        "recipeYear": "1979	",
+      },
     },
     "ref": null,
-    "rendered": false,
-    "type": "div",
+    "rendered": null,
+    "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "function",
       "props": Object {
-        "children": false,
-        "className": "recipeDetail",
+        "recipeDetails": Object {
+          "recipeFormat": "VHS",
+          "recipeStars": "Alexander Kaidanovsky",
+          "recipeTitle": "Stalker",
+          "recipeYear": "1979	",
+        },
       },
       "ref": null,
-      "rendered": false,
-      "type": "div",
+      "rendered": null,
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {
@@ -71,8 +70,18 @@ ShallowWrapper {
         },
       },
     },
-    Symbol(enzyme.__providerValues__): undefined,
   },
-  Symbol(enzyme.__providerValues__): Map {},
+  Symbol(enzyme.__linkedRoots__): Array [],
+  Symbol(enzyme.__unrendered__): <RecipeDetails
+    recipeDetails={
+        Object {
+            "recipeFormat": "VHS",
+            "recipeStars": "Alexander Kaidanovsky",
+            "recipeTitle": "Stalker",
+            "recipeYear": "1979	",
+          }
+    }
+/>,
+  Symbol(enzyme.__updatedBy__): null,
 }
 `;

@@ -58,7 +58,6 @@ const Recipes = ({
   const submitEdit = (e, editFields) => {
     e.preventDefault();
     const { recipeTitle, recipeDesc } = editFields;
-    console.log(editFields);
     const data = new FormData();
     data.append('id', recipeToEdit._id);
     data.append('recipeTitle', recipeTitle.value.trim());
@@ -96,12 +95,12 @@ const Recipes = ({
                         {recipe.createdAt}
                       </td>
                       <td
-                        className="col-md-2"
+                        className="col-md-2 td-break-word"
                         onClick={() => displayRecipeById(recipe._id)}
                       >
                         {recipe.recipeTitle}
                       </td>
-                      <td className=" text-center align-middle">
+                      <td className="col-md-1 text-center align-middle">
                         <Button
                           onClick={() => setEditRecipe(recipe)}
                           bsStyle="info"
@@ -110,7 +109,7 @@ const Recipes = ({
                           <Glyphicon glyph="pencil" />
                         </Button>
                       </td>
-                      <td className="text-center align-middle">
+                      <td className="col-md-1 text-center align-middle">
                         <Button
                           onClick={() => showDeleteModal(recipe)}
                           bsStyle="info"
@@ -138,7 +137,9 @@ const Recipes = ({
         aria-labelledby="contained-modal-title"
       >
         <Modal.Header>
-          <Modal.Title id="contained-modal-title">Edit Your Recipe</Modal.Title>
+          <Modal.Title id="contained-modal-title">
+            Edit {recipeToEdit && recipeToEdit.recipeTitle} Recipe
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div className="col-md-12">

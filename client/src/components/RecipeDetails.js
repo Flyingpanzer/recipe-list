@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react';
+import { Button, Glyphicon } from 'react-bootstrap';
 
-const RecipeDetails = ({ recipe }) => {
+import PrevRecipes from './PrevRecipes';
+const RecipeDetails = ({ recipe, showPreviousDesc, prevDesc }) => {
   return (
     <Fragment>
       {recipe && (
@@ -9,7 +11,16 @@ const RecipeDetails = ({ recipe }) => {
           <table className="table table-bordered table-striped">
             <thead>
               <tr>
-                <th>Description</th>
+                <th>
+                  Description{' '}
+                  <Button
+                    onClick={() => showPreviousDesc(recipe)}
+                    bsStyle="info"
+                    bsSize="xsmall"
+                  >
+                    <Glyphicon glyph="th-list" />
+                  </Button>
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -20,6 +31,7 @@ const RecipeDetails = ({ recipe }) => {
           </table>
         </Fragment>
       )}
+      <PrevRecipes prevDesc={prevDesc} />
     </Fragment>
   );
 };

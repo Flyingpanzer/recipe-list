@@ -6,7 +6,7 @@ var Schema = mongoose.Schema({
     default: Date.now,
   },
   recipeTitle: String,
-  recipeDesc: String,
+  recipeDesc: [String],
 });
 
 export default mongoose.model('Recipe', Schema);

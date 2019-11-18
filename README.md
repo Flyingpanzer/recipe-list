@@ -2,15 +2,6 @@
 
 SPA with REST API for representing recipe list
 
-## Functionality:
-
-- Add recipe to list
-- Delete recipe from list
-- Display recipe details
-- Search recipe by title and by actor name
-- Sort recipe list by recipe title
-- Import recipes from text document
-
 ## Technologies
 
 ### Client

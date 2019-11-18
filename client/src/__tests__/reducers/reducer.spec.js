@@ -1,42 +1,44 @@
-import { INITIAL_STATE, recipeReducer } from "../../reducers/recipeReducer";
+import { INITIAL_STATE, recipeReducer } from '../../reducers/recipeReducer';
 
-describe("recipeReducer", () => {
-  it("SHOW_UPLOAD_MODAL", () => {
+describe('recipeReducer', () => {
+  it('SHOW_EDIT_MODAL', () => {
     const action = {
-      type: "SHOW_UPLOAD_MODAL"
+      type: 'SHOW_EDIT_MODAL',
+      recipeToEdit: undefined,
     };
 
     expect(recipeReducer(INITIAL_STATE, action)).toEqual({
       ...INITIAL_STATE,
-      isShowingUploadModal: true
+      isShowingEditModal: true,
+      recipeToEdit: undefined,
     });
   });
 
-  it("SEARCH_RECIPE_REQUEST_FAILED", () => {
+  it('ADD_NEW_RECIPE_FAILED', () => {
     const action = {
-      type: "SEARCH_RECIPE_REQUEST_FAILED",
+      type: 'ADD_NEW_RECIPE_FAILED',
       error: true,
-      isFetching: true
+      isFetching: true,
     };
 
     expect(recipeReducer(INITIAL_STATE, action)).toEqual({
       ...INITIAL_STATE,
       error: action.error,
-      isFetching: true
+      isFetching: true,
     });
   });
 
-  it("FETCH_RECIPES_SUCCESS", () => {
+  it('FETCH_RECIPES_SUCCESS', () => {
     const action = {
-      type: "FETCH_RECIPES_SUCCESS",
-      recipes: [{ key: "obj" }],
-      message: undefined
+      type: 'FETCH_RECIPES_SUCCESS',
+      recipes: [{ key: 'obj' }],
+      message: undefined,
     };
 
     expect(recipeReducer(INITIAL_STATE, action)).toEqual({
       ...INITIAL_STATE,
       recipes: action.recipes,
-      successMsg: action.message
+      successMsg: action.message,
     });
   });
 });

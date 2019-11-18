@@ -1,30 +1,30 @@
 import {
-  addNewRecipeRequestFailed,
+  addNewRecipeFailed,
   displayRecipeById,
-  searchRecipeRequestSuccess
-} from "../../actions/recipeActions";
+  showPrevDescSuccess,
+} from '../../actions/recipeActions';
 
-it("addNewRecipeRequestFailed(): should create an action to set error", () => {
+it('addNewRecipeFailed(): should create an action to set error', () => {
   const expectedAction = {
-    type: "ADD_NEW_RECIPE_REQUEST_FAILED",
-    error: undefined
+    type: 'ADD_NEW_RECIPE_FAILED',
+    error: undefined,
   };
-  expect(addNewRecipeRequestFailed()).toEqual(expectedAction);
+  expect(addNewRecipeFailed()).toEqual(expectedAction);
 });
 
-it("displayRecipeById(): should create an action to set recipe id", () => {
+it('displayRecipeById(): should create an action to set recipe id', () => {
   const expectedAction = {
-    type: "DISPLAY_RECIPE_BY_ID",
-    recipeId: undefined
+    type: 'DISPLAY_RECIPE_BY_ID',
+    recipeId: undefined,
   };
   expect(displayRecipeById()).toEqual(expectedAction);
 });
 
-it("searchRecipeRequestSuccess(): should create an action to set recipe and success message", () => {
+it('showPrevDescSuccess(): should create an action to set recipe and success message', () => {
   const expectedAction = {
-    type: "SEARCH_RECIPE_REQUEST_SUCCESS",
-    recipe: undefined,
-    message: undefined
+    type: 'SHOW_PREV_DESC_SUCCESS',
+    prevDesc: undefined,
+    message: undefined,
   };
-  expect(searchRecipeRequestSuccess()).toEqual(expectedAction);
+  expect(showPrevDescSuccess()).toEqual(expectedAction);
 });

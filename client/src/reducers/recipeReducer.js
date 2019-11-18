@@ -47,6 +47,13 @@ export const recipeReducer = (currentState = INITIAL_STATE, action) => {
       };
 
     case FETCH_RECIPES_SUCCESS:
+      action.recipes.map(
+        recipe =>
+          (recipe.createdAt = new Date(recipe.createdAt)
+            .toISOString()
+            .replace(/T|Z|\.\d{3}/g, ' ')
+            .trim()),
+      );
       return {
         ...currentState,
         recipes: action.recipes,

@@ -31,18 +31,6 @@ const RecipeEditForm = ({
       <div className="row">
         <div className="col-md-12">
           <FormGroup>
-            <ControlLabel>: </ControlLabel>
-            <FormControl
-              onChange={onChange}
-              type="text"
-              placeholder="Enter recipe title"
-              name="recipeTitle"
-              defaultValue={recipeToEdit.recipeTitle}
-            />
-          </FormGroup>
-        </div>
-        <div className="col-md-12">
-          <FormGroup>
             <ControlLabel>Description: </ControlLabel>
             <FormControl
               onChange={onChange}

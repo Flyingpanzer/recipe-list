@@ -57,10 +57,9 @@ const Recipes = ({
 
   const submitEdit = (e, editFields) => {
     e.preventDefault();
-    const { recipeTitle, recipeDesc } = editFields;
+    const { recipeDesc } = editFields;
     const data = new FormData();
     data.append('id', recipeToEdit._id);
-    data.append('recipeTitle', recipeTitle.value.trim());
     data.append('recipeDesc', recipeDesc.value.trim());
     editRecipe(data);
   };

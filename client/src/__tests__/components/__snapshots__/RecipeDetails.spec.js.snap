@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SearchDetails component receive props and renders 1`] = `
+exports[`RecipeDetails component receive props and renders 1`] = `
 ReactWrapper {
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -19,10 +19,14 @@ ReactWrapper {
     "nodeType": "function",
     "props": Object {
       "recipeDetails": Object {
-        "recipeFormat": "VHS",
-        "recipeStars": "Alexander Kaidanovsky",
-        "recipeTitle": "Stalker",
-        "recipeYear": "1979	",
+        "prevDesc": Array [
+          " eggs, flour, and salt",
+        ],
+        "recipe": Object {
+          "recipeDesc": "Desc",
+          "recipeTitle": "Omelette",
+        },
+        "showPreviousDesc": false,
       },
     },
     "ref": null,
@@ -36,10 +40,14 @@ ReactWrapper {
       "nodeType": "function",
       "props": Object {
         "recipeDetails": Object {
-          "recipeFormat": "VHS",
-          "recipeStars": "Alexander Kaidanovsky",
-          "recipeTitle": "Stalker",
-          "recipeYear": "1979	",
+          "prevDesc": Array [
+            " eggs, flour, and salt",
+          ],
+          "recipe": Object {
+            "recipeDesc": "Desc",
+            "recipeTitle": "Omelette",
+          },
+          "showPreviousDesc": false,
         },
       },
       "ref": null,
@@ -75,10 +83,14 @@ ReactWrapper {
   Symbol(enzyme.__unrendered__): <RecipeDetails
     recipeDetails={
         Object {
-            "recipeFormat": "VHS",
-            "recipeStars": "Alexander Kaidanovsky",
-            "recipeTitle": "Stalker",
-            "recipeYear": "1979	",
+            "prevDesc": Array [
+              " eggs, flour, and salt",
+            ],
+            "recipe": Object {
+              "recipeDesc": "Desc",
+              "recipeTitle": "Omelette",
+            },
+            "showPreviousDesc": false,
           }
     }
 />,

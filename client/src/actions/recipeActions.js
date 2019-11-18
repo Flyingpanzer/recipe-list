@@ -4,7 +4,6 @@ import {
   FETCH_RECIPES_FAILED,
   SHOW_ADD_MODAL,
   HIDE_ADD_MODAL,
-  ADD_NEW_RECIPE_REQUEST,
   ADD_NEW_RECIPE_SUCCESS,
   ADD_NEW_RECIPE_FAILED,
   SHOW_PREV_DESC_SUCCESS,
@@ -63,7 +62,6 @@ export const fetchRecipesFailed = error => {
 
 export const addNewRecipe = recipe => {
   return dispatch => {
-    dispatch(addNewRecipeRequest(recipe));
     return fetch(apiUrl, {
       method: 'post',
       body: recipe,
@@ -78,13 +76,6 @@ export const addNewRecipe = recipe => {
         });
       }
     });
-  };
-};
-
-export const addNewRecipeRequest = recipe => {
-  return {
-    type: ADD_NEW_RECIPE_REQUEST,
-    recipe,
   };
 };
 

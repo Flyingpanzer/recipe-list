@@ -29,9 +29,9 @@ const RecipeDetails = ({ recipe, showPreviousDesc, prevDesc }) => {
               </tr>
             </tbody>
           </table>
+          <PrevRecipes prevDesc={prevDesc} />
         </Fragment>
       )}
-      <PrevRecipes prevDesc={prevDesc} />
     </Fragment>
   );
 };
